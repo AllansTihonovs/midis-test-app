@@ -43,7 +43,7 @@ const confirmDelete = (id) => {
 </script>
 
 <template>
-    <div class="container mx-auto p-4">
+    <div class="container mx-auto p-4 mt-6 w-full overflow-hidden bg-white px-6 py-4 sm:rounded-lg">
         <div class="flex justify-between items-center mb-4">
             <h1 class="text-2xl font-bold">Guestbook Messages</h1>
             <div>
@@ -99,11 +99,11 @@ const confirmDelete = (id) => {
                         </a>
                     </template>
                     <div v-if="message.updated_at !== message.created_at" class="text-xs text-gray-500 mt-1">
-                        Edited: {{ new Date(message.updated_at).toLocaleString() }}
+                        Edited: {{ new Date(message.updated_at).toLocaleString('lv-LV') }}
                     </div>
                 </td>
                 <td class="p-2">
-                    {{ new Date(message.created_at).toLocaleString() }}
+                    {{ new Date(message.created_at).toLocaleString('lv-LV') }}
                 </td>
                 <td class="p-2">
                     <div class="flex gap-2">

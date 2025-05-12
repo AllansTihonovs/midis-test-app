@@ -16,7 +16,7 @@ const confirmDelete = (id) => {
 
 <template>
     <AuthenticatedLayout>
-        <div class="container mx-auto p-4">
+        <div class="container mx-auto p-4 mt-6 w-full overflow-hidden bg-white px-6 py-4 shadow-md sm:rounded-lg">
             <div class="flex justify-between items-center mb-4">
                 <h1 class="text-2xl font-bold">Administrators</h1>
                 <div>
@@ -47,7 +47,7 @@ const confirmDelete = (id) => {
                 <tr v-for="admin in administrators.data" :key="admin.id" class="border-t">
                     <td class="p-2">{{ admin.name }}</td>
                     <td class="p-2">{{ admin.email }}</td>
-                    <td class="p-2">{{ new Date(admin.created_at).toLocaleString() }}</td>
+                    <td class="p-2">{{ new Date(admin.created_at).toLocaleString('lv-LV') }}</td>
                     <td class="p-2 flex gap-2">
                         <Link :href="route('admin.edit', admin.id)" class="text-blue-600 hover:underline">Edit</Link>
                         <button @click="confirmDelete(admin.id)" class="text-red-600 hover:underline">Delete</button>
